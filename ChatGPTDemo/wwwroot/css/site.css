@@ -1,0 +1,192 @@
+﻿.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: auto;
+    position: relative;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 100%;
+}
+
+.message.user {
+    background-color: lightgray;
+    color: darkslateblue;
+    align-self: flex-end;
+}
+
+.message.bot {
+    background-color: #e5e5e5;
+    align-self: flex-start;
+}
+
+.message-input {
+    display: flex;
+    position:fixed;
+    background-color: #fff;
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    height:10%;
+    max-width: 700px;
+    
+}
+
+.message-input textarea {
+    flex: content;
+    resize: none;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.message-input button {
+    
+    border: none;
+    background-color: lightslategray;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
+.message-input button:hover {
+    background-color: #0056b3;
+}
+
+.container {
+    position: relative;
+    display: inline-block; /* Adjust if you want to use a different display property */
+}
+
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+.modal {
+    padding: 30px;
+    position: fixed;
+    z-index: 1;
+    width: 50%;
+    height: 100%;
+    left: 500px;
+    top: 200px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 8px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.custom-message {
+    border: 1px solid #ddd;
+    padding: 10px;
+    
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+}
+
+    .custom-message table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .custom-message th, .custom-message td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    .custom-message th {
+        background-color: #f2f2f2;
+    }
+
+pre {
+    background-color: #2d2d2d;
+    color: #cccccc;
+    padding: 16px;
+    border-radius: 8px;
+    overflow: auto;
+}
+
+pre code {
+    color: #dd08f4;
+    font-family: Consolas, 'Courier New', monospace;
+}
+
+    .language-csharp keyword {
+        color: #569cd6;
+    }
+
+    .language-csharp class-name {
+        color: #4ec9b0;
+    }
+
+    .language-csharp method-name {
+    color: #dcdcaa;
+}
+
+    .language-csharp string {
+    color: #d69d85;
+}
+
+.user-message {
+    background-color: #e0f7fa; /* Light cyan for user messages */
+    color: #0d6efd; /* Black text for user messages */
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+.assistant-message {
+    background-color: #ffffff; /* White for assistant messages */
+    color: #000; /* Black text for assistant messages */
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+
+
+
