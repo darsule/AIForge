@@ -1,0 +1,66 @@
+﻿<head>
+    <style>
+        .dropdown-menu.show {
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 0px;
+            will-change: transform;
+        }
+    </style>
+</head>
+<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <span>
+            <img src="globant_logo.jpg" alt="+" style="width: 100px; height: 25px; vertical-align: middle; margin-right: 10px;">
+            <a class="navbar-brand" href="">  - Genie</a>
+        </span>
+    </div>
+</div>
+
+<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+
+<div style="background-color:cadetblue" class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="chat">
+                <span aria-hidden="true">
+                    <img src="ChatGPT_logo.svg" alt="+" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;">
+                </span> ChatGpt
+            </NavLink>
+        </div>
+    </nav>
+    <div style="border: 1px solid; border-color:antiquewhite; width:90%; height:50%; margin-left:15px">
+        <div style="margin-left:8px">Chat History</div>
+        <div class="btn-group">
+            <button class="btn btn-secondary btn-sm" style="margin-left:8px; width:180px" type="button">
+                Today
+            </button>
+            <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" @onclick="ToggleDropdown">
+                <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul style="margin-left:8px; width:180px" class="dropdown-menu @(isDropdownOpen ? "show" : "")">
+                <li><a class="dropdown-item" href="#">History-1</a></li>
+                <li><a class="dropdown-item" href="#">History-2</a></li>
+                <li><a class="dropdown-item" href="#">History-3</a></li
+                <li><a class="dropdown-item" href="#">History-4</a></li>
+                <li><a class="dropdown-item" href="#">History-5</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+@code {
+    private bool isDropdownOpen = false;
+
+    private void ToggleDropdown()
+    {
+        isDropdownOpen = !isDropdownOpen;
+    }
+}

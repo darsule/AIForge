@@ -1,0 +1,75 @@
+﻿@page "/chat"
+@inherits ChatComponentBase
+@rendermode InteractiveServer
+
+<div class="chat-container">
+    <div class="chat-messages">
+        @if (Messages == null)
+        {
+            <div class="message">
+                <span>Loading...</span>
+            </div>
+        }
+        else
+        @foreach (var message in Messages)
+        {
+            <div class="card-header">
+                    <div class="custom-message @GetMessageClass(message.Role)">
+                    @((MarkupString)message.Content)
+                </div>
+            </div>
+        }
+    </div>
+    
+    <div class="message-input">
+        <textarea @bind="UserInput" placeholder="Type your message here..."></textarea>
+        <br />
+        <br />
+        <button class="btn btn-secondary m-2" @onclick="SendMessage">Send</button>
+        <button class="btn btn-secondary m-2" @onclick="ClearChat">Clear Chat</button>
+    </div>
+</div>
+
+<div>
+    <button style="padding:1px; width:2%;position: fixed;left: 890px; top: 534px;" class="btn btn-secondary" @onclick="ShowModal">
+        +
+    </button>
+</div>
+
+<div>
+    <Modal @ref="modalRef">
+    <h6>File Upload</h6>
+        <InputFile OnChange="UploadFiles" class="form-control" accept=".doc,.docx,.xls, .xlsx" />
+    <br />
+    <div style="display:flex; justify-content:center">
+        <button class="btn btn-secondary" @onclick="CloseModal">
+            Close
+        </button>
+    </div>
+    </Modal>
+</div>
+
+@code {
+
+    private string GetMessageClass(string role)
+    {
+        return role == "user" ? "user-message" : "assistant-message";
+    }
+
+    private Modal modalRef;
+
+    private void ShowModal()
+    {
+        modalRef.Show();
+    }
+
+    private void CloseModal()
+    {
+        modalRef.Hide();
+    }
+
+
+    
+}
+
+
