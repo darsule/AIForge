@@ -14,7 +14,7 @@ namespace OpenAiAPIDemo.Functions
             return new FunctionDefinition()
             {
                 Name = Name,
-                Description = "Get Globant India Pvt Ltd India leave policy details for various leave types like" +
+                Description = "Get general information about leave policy details for various leave types like" +
                 " Personal Time off(PTO/Paid Leaves), Leave Without Pay, Be kind to yourself, " +
                 "Child hospitalization leave, Maternity and Adoption Leaves, Paternity, Bereavement Leave, " +
                 "Public Holidays / Holiday Calendar 2024, Compensatory Time Off, Leave Encashment, Work from Home, " +
@@ -25,7 +25,7 @@ namespace OpenAiAPIDemo.Functions
 
         static public string GetLeavePolicyDetails(string? prompt)
         {
-            string filePath = Path.Combine("wwwroot", "Leave Policy- Globant India.docx");
+            string filePath = Path.Combine("wwwroot", "Sample.docx");
             string jsonResult = ConvertWordToJson(filePath);
             string matchedResult = GetMatchedPolicyData(jsonResult, prompt);
 
