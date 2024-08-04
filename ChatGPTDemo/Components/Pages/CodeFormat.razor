@@ -1,0 +1,51 @@
+﻿@page "/codeformat"
+@inject IJSRuntime JS
+@using Markdig
+
+<h5>Apply custom formatting to code block.</h5>
+
+<div class="code-block custom-message">
+    @((MarkupString)htmlContent)
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", (event) => {
+        hljs.highlightAll();
+    });
+</script>
+
+@code {
+    private string botResponse = @"
+    ```
+    csharp
+
+    using System;
+
+    public class DisplayMessage
+    {
+        public static void Display(string message)
+        {
+            Console.WriteLine(message);
+        }
+    }
+
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            string message = ""Hello, world!"";
+            DisplayMessage.Display(message);
+        }
+    }
+
+    ";
+
+    private string htmlContent;
+
+    protected override void OnInitialized()
+    {
+        var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
+        string formattedResponse = botResponse.Trim();
+        htmlContent = Markdown.ToHtml(formattedResponse, pipeline);
+    }
+}

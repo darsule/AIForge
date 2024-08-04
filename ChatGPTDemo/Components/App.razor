@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,13 +11,18 @@
     <link rel="stylesheet" href="OpenAiAPIDemo.styles.css" />
     <link rel="stylesheet" href="css/site.css"/>
     <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="css/custom-highlight.css">
     <HeadOutlet />
 </head>
 
 <body>
     <Routes />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <script src="_framework/blazor.web.js"></script>
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
+
+
