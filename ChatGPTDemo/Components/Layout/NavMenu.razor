@@ -35,6 +35,14 @@
                 </span> ChatGpt
             </NavLink>
         </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="codeformat">
+                <span aria-hidden="true">
+                    <img src="ChatGPT_logo.svg" alt="+" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;">
+                </span> Code Format
+            </NavLink>
+        </div>
     </nav>
     <div style="border: 1px solid; border-color:antiquewhite; width:90%; height:50%; margin-left:15px">
         <div style="margin-left:8px">Chat History</div>
@@ -58,9 +66,14 @@
 
 @code {
     private bool isDropdownOpen = false;
+    [Inject] private NavigationManager NavigationManager { get; set; }
 
     private void ToggleDropdown()
     {
         isDropdownOpen = !isDropdownOpen;
     }
+
+    
+
+    
 }

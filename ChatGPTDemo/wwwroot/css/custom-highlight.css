@@ -1,0 +1,44 @@
+﻿pre {
+    background-color: black;
+    color: #cccccc;
+    padding: 16px;
+    border-radius: 8px;
+    overflow: auto;
+}
+    pre code {
+        color: #dd08f4;
+        font-family: Consolas, 'Courier New', monospace;
+    }
+    .code-block {
+        background-color: black;
+        color: white;
+    }
+
+    .hljs {
+        background-color: black;
+        color: white;
+    }
+
+    .hljs-keyword {
+        color: greenyellow;
+    }
+
+    .hljs-built_in {
+        color: blueviolet;
+    }
+
+    .hljs-type {
+        color: red;
+    }
+
+    .hljs-title {
+        color: darkorange;
+    }
+
+    .hljs-function {
+        color: #dcdcaa;
+    }
+
+    .hljs-string {
+        color: blue;
+    }
